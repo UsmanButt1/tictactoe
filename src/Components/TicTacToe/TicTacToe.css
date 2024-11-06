@@ -1,0 +1,195 @@
+.container {
+    text-align: center;
+    align-items: center;
+}
+
+.title {
+    margin-top: 10px;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title span {
+    color: #FFCC00;
+    padding-right: 15px;
+}
+
+.reset, .restart {
+    width: 250px;
+    height: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #1F1137;
+    font-size: 26px;
+    color: #FFCC00;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin: 10px;
+}
+
+.btns {
+    width: 250px;
+    height: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #1F1137;
+    font-size: 26px;
+    color: #FFCC00;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin: 10px;
+}
+
+.playerbuttons {
+    display: flex;
+    justify-content: center;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+}
+
+.gameplay-gif {
+    max-width: 100%; /* Ensures the gif fits within the container */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.example {
+    color: #FFCC00;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 540px; /* Adjust this width based on box size and borders */
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap the items to fit them in rows */
+    width: 100%; /* Ensures boxes are arranged in rows */
+}
+
+.boxes {
+    height: 180px; /* Height of the box */
+    width: 180px; /* Width of the box */
+    background: #1F1137;
+    border: 2px solid #FFCC00;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure content doesn't overflow the box */
+}
+
+.boxes img {
+    width: 100%;  /* Set the width to 100% of the box */
+    height: 100%; /* Set the height to 100% of the box */
+    object-fit: cover; /* Maintain aspect ratio and fill the box */
+}
+
+h2 {
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+.currentplayer {
+    margin-top: 1px;
+}
+
+/* CSS for IconSelection screen */
+
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for uniform grid */
+    gap: 50px; /* Adjust gap for spacing between boxes */
+    justify-items: center;
+    margin: 50px auto;
+}
+
+/* Icon boxes: Set consistent size for all */
+.gif-box {
+    width: 320px; /* Uniform width */
+    height: 320px; /* Uniform height */
+    border: 5px solid gold; /* Gold border around each box */
+    border-radius: 10px;
+    overflow: hidden; /* Ensure no overflow of content */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover */
+.gif-box:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Disabled box state */
+.gif-box.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* GIF fits uniformly inside the box */
+.gif-icon {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: fill; /* Stretch to fill the box, minor loss in quality if necessary */
+}
+
+/* Centering title */
+.icon-selection h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* New styling for the scoreboard */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 540px; /* Ensure enough space to fit both scoreboards around the board */
+    margin: 20px auto; /* Center the scoreboard */
+}
+
+.score {
+    width: 130px;
+    height: 100px;
+    background: #1F1137;
+    border: 4px solid #FFCC00; /* Gold border for the score box */
+    border-radius: 12px;
+    color: #FFCC00; /* Use the same color as your theme */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.score p {
+    font-size: 36px;
+    margin: 0;
+}
