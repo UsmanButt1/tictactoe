@@ -53,6 +53,7 @@ const TicTacToe = ({ playerIcon1, playerIcon2, mode }) => {
     }, [board, playerIcon1, playerIcon2]);
     // Function to handle the computer's move
     useEffect(() => {
+        // Ensure the computer only makes a move if the game is still ongoing
         if (!isXNext && mode === '1player' && !isGameOver && !winner) {
             const makeBlockingMove = () => {
                 const lines = [
@@ -68,14 +69,17 @@ const TicTacToe = ({ playerIcon1, playerIcon2, mode }) => {
                 for (let i = 0; i < lines.length; i++) {
                     const [a, b, c] = lines[i];
                     const line = [board[a], board[b], board[c]];
+                    // If two player 1's icons are aligned, block the move
                     if (line.filter(val => val === playerIcon1).length === 2 && line.includes(null)) {
                         return [a, b, c].find(index => board[index] === null);
                     }
                 }
                 return null;
             };
+    
             const blockingMove = makeBlockingMove();
             let newBoard = [...board];
+    
             if (blockingMove !== null && !lastMoveWasRandom.current) {
                 // If there's a blocking move available and it's time to block
                 newBoard[blockingMove] = playerIcon2;
@@ -87,8 +91,10 @@ const TicTacToe = ({ playerIcon1, playerIcon2, mode }) => {
                 newBoard[randomMove] = playerIcon2;
                 lastMoveWasRandom.current = false; // Switch to block next time
             }
+    
+            // Update the board only if the game is still ongoing (no winner yet)
             setBoard(newBoard);
-            setIsXNext(true);
+            setIsXNext(true);  // Switch turn back to Player 1 after the computer's move
         }
     }, [isXNext, mode, board, isGameOver, winner, playerIcon1, playerIcon2]);
     const handleClick = (index) => {
@@ -106,7 +112,7 @@ const TicTacToe = ({ playerIcon1, playerIcon2, mode }) => {
         scoreUpdatedRef.current = false;
     };
     const restartGame = () => {
-        navigate('/');
+        navigate('/tictactoe');
     };
     const getCurrentPlayerName = () => isXNext ? "Player 1" : (mode === '1player' ? "Computer" : "Player 2");
     const getWinnerName = () => {
