@@ -13,7 +13,7 @@ const GameModeSelection = ({ setMode }) => {
 
     return (
         <div>
-            <h1 className="title"><span>Harry Potter</span> Tic Tac Toe</h1>
+            <h1 className="title"><span>Harry Potter's</span> Tic Tac Toe</h1>
             <h2>Select Game Mode</h2>
 
             <div className="playerbuttons">
